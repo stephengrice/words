@@ -1,3 +1,6 @@
+const fs = require('fs');
+const verb_data = JSON.parse(fs.readFileSync('data/verbs.json'));
+
 const Tense = {
 	INFINITIVE: 0,
 	PRESENT: 1,
@@ -18,7 +21,12 @@ class Verb {
 			throw new Error("Infinitive was not provided in the Verb constructor");
 		}
 		this.infinitive = infinitive;
-		this.known = false;
+		if (this.infinitive in verb_data) {
+			this.known = true;
+		}
+		else {
+			this.known = false;
+		}
 	}
 	conjugate(tense) {
 		if (tense == Tense.INFINITIVE) {
