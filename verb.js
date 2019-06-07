@@ -13,13 +13,12 @@ class Verb {
 	static get Person() {
 		return Person;
 	}
-	constructor(infinitive, past_indicative, past_participle) {
-		if (infinitive == undefined || past_indicative == undefined || past_participle == undefined) {
-			throw new Error("One or more arguments to the Verb constructor are undefined.");
+	constructor(infinitive) {
+		if (infinitive == undefined) {
+			throw new Error("Infinitive was not provided in the Verb constructor");
 		}
 		this.infinitive = infinitive;
-		this.past_indicative = past_indicative;
-		this.past_participle = past_participle;
+		this.known = false;
 	}
 	conjugate(tense) {
 		if (tense == Tense.INFINITIVE) {

@@ -1,13 +1,13 @@
-[
-	{
+{
+	"eat": {
 		"infinitive": "eat",
 		"past_indicative": "ate",
 		"past_participle": "eaten"
 	},
-	{
+	"jump": {
 		"infinitive": "jump"
 	},
-	{
+	"consume": {
 		"infinitive": "consume"
 	}
-]
+}

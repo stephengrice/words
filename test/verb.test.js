@@ -13,11 +13,11 @@ describe('Verb', () => {
 			new Verb();
 		}, Error);
 	});
-	it('successfully instantiates with 3 arguments', () => {
-		new Verb("abide", "abided", "abided");
+	it('successfully instantiates with 1 argument', () => {
+		new Verb("abide");
 	});
 	it('returns the infinitive when asked', () => {
-		let verb = new Verb('infinitive', 'past_indicative', 'past_participle');
+		let verb = new Verb('infinitive');
 		assert.equal('infinitive', verb.conjugate(Verb.Tense.INFINITIVE));
 	});
 	it('conjugates first person present', () => {
@@ -30,5 +30,13 @@ describe('Verb', () => {
 			let verb = new Verb(test[0], test[1], test[2]);
 			assert.equal(verb.infinitive, verb.conjugate(Verb.Tense.PRESENT, Verb.Person.FIRST_SINGULAR));
 		});
+	});
+	it('is not known when word is not in data files', () => {
+		let verb = new Verb('this-is-not-a-word');
+		assert.strictEqual(verb.known, false);
+	});
+	it('is known when word is in data files', () => {
+		let verb = new Verb('eat');
+		assert.strictEqual(verb.known, true);
 	});
 });
