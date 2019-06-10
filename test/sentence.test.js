@@ -13,4 +13,10 @@ describe('Sentence', () => {
       assert(str.includes(sentence.words[i].toString().toLowerCase()));
     }
   });
+  it('ends with punctuation', () => {
+    let sentence = new Sentence();
+    let str = sentence.toString();
+    let lastChar = str[str.length - 1];
+    assert(lastChar == '.' || lastChar == '!' || lastChar == '?');
+  });
 });

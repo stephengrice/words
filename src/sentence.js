@@ -14,6 +14,7 @@ class Sentence {
     for (var i = 0; i < this.words.length; i++) {
       str += this.words[i];
     }
+    str += '.';
     return str;
   }
 }
