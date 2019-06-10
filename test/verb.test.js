@@ -1,7 +1,7 @@
 const assert = require('assert');
 const fs = require('fs');
 
-const Verb = require('../verb');
+const Verb = require('../src/verb');
 const data_verbs = JSON.parse(fs.readFileSync('data/verbs.json'));
 
 describe('Verb', () => {

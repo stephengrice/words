@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-const noun = require('../noun');
+const noun = require('../src/noun');
 
 describe('Noun', () => {
 });
