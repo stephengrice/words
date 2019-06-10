@@ -1,4 +1,5 @@
 const fs = require('fs');
+const Word = require('./word')
 const verb_data = JSON.parse(fs.readFileSync('data/verbs.json'));
 
 const Tense = {
@@ -9,7 +10,7 @@ const Person = {
 	FIRST_SINGULAR: 0,
 };
 
-class Verb {
+class Verb extends Word {
 	static get Tense() {
 		return Tense;
 	}
@@ -17,6 +18,7 @@ class Verb {
 		return Person;
 	}
 	constructor(infinitive) {
+		super();
 		if (infinitive == undefined) {
 			throw new Error("Infinitive was not provided in the Verb constructor");
 		}
