@@ -6,6 +6,10 @@ const Word = require('../src/word');
 const data_verbs = JSON.parse(fs.readFileSync('data/verbs.json'));
 
 describe('Verb', () => {
+	it('extends Word', () => {
+		let verb = new Verb('eat');
+		assert(verb instanceof Word);
+	});
 	it('has Tense enum', () => {
 		assert.equal(Verb.Tense.INFINITIVE, 0);
 	});
@@ -43,8 +47,8 @@ describe('Verb', () => {
 		let verb = new Verb('eat');
 		assert.strictEqual(verb.known, true);
 	});
-	it('extends Word', () => {
+	it('calls constructor to set base_form', () => {
 		let verb = new Verb('eat');
-		assert(verb instanceof Word);
+		assert(verb.base == 'eat');
 	});
 });

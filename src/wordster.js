@@ -3,9 +3,9 @@ const Paragraph = require('./paragraph');
 
 module.exports = {
   generateSentence: function() {
-    return new Sentence();
+    return new Sentence().toString();
   },
   generateParagraph: function() {
-    return new Paragraph();
+    return new Paragraph().toString();
   },
 };

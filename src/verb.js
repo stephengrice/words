@@ -18,7 +18,7 @@ class Verb extends Word {
 		return Person;
 	}
 	constructor(infinitive) {
-		super();
+		super(infinitive);
 		if (infinitive == undefined) {
 			throw new Error("Infinitive was not provided in the Verb constructor");
 		}

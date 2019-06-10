@@ -5,15 +5,11 @@ const wordster = require('../src/wordster');
 
 describe('Wordster', () => {
   it('can generate a sentence', () => {
-    let sentence = wordster.generateSentence();
-    assert(sentence instanceof Sentence);
-    let str = sentence.toString();
+    let str = wordster.generateSentence();
     assert(str.length > 0);
   });
   it('can generate a paragraph', () => {
-    let paragraph = wordster.generateParagraph();
-    assert(paragraph instanceof Paragraph);
-    let str = paragraph.toString();
+    let str = wordster.generateParagraph();
     assert(str.length > 0);
   });
 });
