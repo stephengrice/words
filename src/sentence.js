@@ -13,6 +13,9 @@ class Sentence {
     let str = '';
     for (var i = 0; i < this.words.length; i++) {
       str += this.words[i];
+      if (i < this.words.length - 1) {
+        str += ' '; // space between words
+      }
     }
     str += '.';
     return str;
