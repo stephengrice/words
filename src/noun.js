@@ -3,6 +3,9 @@ const Word = require('./word');
 const KNOWN = {
   'dog':{},
   'cat':{},
+  'mouse':{'plural':'mice'},
+  'horse':{},
+  'cow':{}
 };
 
 class Noun extends Word {

@@ -23,9 +23,9 @@ describe('Sentence', () => {
   it('has spaces between words', () => {
     for (var i = 0; i < sentence.words.length - 1; i++) { // Skip the last word since it's at the very end
         let word = sentence.words[i].toString();
-        let idx = str.indexOf(word);
+        let idx = str.toLowerCase().indexOf(word.toLowerCase());
         let spaceChar = str.charAt(idx + word.length);
-        assert(spaceChar == ' ', `Character ${spaceChar} in sentence ${str} should be a space but is not.`);
+        assert(spaceChar == ' ', `Character ${spaceChar} in sentence ${str} at index ${idx + word.length} (word is ${word}, index ${idx}) should be a space but is not.`);
     }
   });
   it('begins with a capital letter', () => {
