@@ -3,9 +3,10 @@ const Paragraph = require('../src/paragraph');
 
 describe('Paragraph', () => {
   var paragraph, str;
-  beforeEach(() => {
+  before(() => {
     paragraph = new Paragraph();
     str = paragraph.toString();
+    console.log('  Generated test paragraph: \n  ' + str);
   });
   it('has sentences', () => {
     assert(paragraph.sentences.length > 0);

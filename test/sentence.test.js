@@ -3,9 +3,10 @@ const Sentence = require('../src/sentence');
 
 describe('Sentence', () => {
   var sentence, str;
-  beforeEach(() => {
+  before(() => {
     sentence = new Sentence();
     str = sentence.toString();
+    console.log('  Generated test sentence: \n  ' + str);
   });
   it('has words', () => {
     assert(sentence.words.length > 0);
