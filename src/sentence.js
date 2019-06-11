@@ -6,7 +6,13 @@ class Sentence {
   constructor() {
     this.words = [];
     for (var i = 0; i < DEFAULT_LENGTH; i++) {
-      this.words.push(new Noun('dog'));
+      // Avoid repeating words - if last matches, regenerate
+      var word, prevWord;
+      do {
+        word = Noun.random();
+        prevWord = this.words[i-1];
+      } while (i > 0 && word.toString() == prevWord.toString());
+      this.words.push(word);
     }
   }
   toString() {

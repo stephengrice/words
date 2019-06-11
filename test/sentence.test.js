@@ -31,4 +31,11 @@ describe('Sentence', () => {
   it('begins with a capital letter', () => {
     assert(str[0] == str[0].toUpperCase());
   });
+  it('does not repeat words', () => {
+    for (var i = 0; i < sentence.words.length - 1; i++) {
+      let thisword = sentence.words[i];
+      let nextword = sentence.words[i+1];
+      assert.notEqual(thisword.toString(), nextword.toString());
+    }
+  });
 });
