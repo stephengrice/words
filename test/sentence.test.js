@@ -27,4 +27,7 @@ describe('Sentence', () => {
         assert(spaceChar == ' ', `Character ${spaceChar} in sentence ${str} should be a space but is not.`);
     }
   });
+  it('begins with a capital letter', () => {
+    assert(str[0] == str[0].toUpperCase());
+  });
 });
