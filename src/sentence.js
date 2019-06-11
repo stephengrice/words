@@ -1,10 +1,12 @@
 const Noun = require('./noun');
+const Clause = require('./clause');
 
 const DEFAULT_LENGTH = 5;
 
 class Sentence {
   constructor() {
     this.words = [];
+    this.clauses = [new Clause()];
     for (var i = 0; i < DEFAULT_LENGTH; i++) {
       // Avoid repeating words - if last matches, regenerate
       var word, prevWord;
