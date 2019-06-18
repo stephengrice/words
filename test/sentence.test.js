@@ -9,7 +9,7 @@ describe('Sentence', () => {
     console.log('  Generated test sentence: \n  ' + str);
   });
   it('has words', () => {
-    assert(sentence.words.length > 0);
+    assert(sentence.words.length > 0, `Sentence has no words. sentence.words = ${sentence.words}`);
   });
   it('includes each of its words in toString', () => {
     for (var i = 0; i < sentence.words.length; i++) {
@@ -45,10 +45,11 @@ describe('Sentence', () => {
     let wordIdx = 0;
     for (var i = 0; i < sentence.clauses.length; i++) {
       let clause = sentence.clauses[i];
-      for (var j = 0; j < clause.words.length; i++) {
+      for (var j = 0; j < clause.words.length; j++) {
         let sentence_word = sentence.words[wordIdx];
         let clause_word = clause.words[j];
-        assert(word == clause, `Sentence words and clauses do not match up: word number ${wordIdx}=${sentence_word.toString()}, clause ${i} word ${j}=${clause_word.toString()}`);
+        assert(sentence_word == clause_word, `Sentence words and clauses do not match up: word number ${wordIdx}=${sentence_word.toString()}, clause ${i} word ${j}=${clause_word.toString()}`);
+        wordIdx += 1;
       }
     }
   });

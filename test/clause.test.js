@@ -1,6 +1,7 @@
 const assert = require('assert');
 const Word = require('../src/word');
 const Noun = require('../src/noun');
+const Verb = require('../src/verb');
 const Clause = require('../src/clause');
 
 describe('Clause', () => {
@@ -22,11 +23,11 @@ describe('Clause', () => {
   it('includes direct object in toString, if one is assigned', () => {
     let n = Noun.random();
     clause.direct_object = n;
-    assert(clause.toString().toLowercase().includes(n.toString().toLowerCase()))
+    assert(clause.toString().toLowerCase().includes(n.toString().toLowerCase()), `Word "${n.toString()}" not found in Clause "${clause.toString()}"`)
   });
   it('includes indirect object in toString, if one is assigned', () => {
     let n = Noun.random();
     clause.indirect_object = n;
-    assert(clause.toString().toLowercase().includes(n.toString().toLowerCase()))
+    assert(clause.toString().toLowerCase().includes(n.toString().toLowerCase()))
   });
 });

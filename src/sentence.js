@@ -5,17 +5,23 @@ const DEFAULT_LENGTH = 5;
 
 class Sentence {
   constructor() {
-    this.words = [];
     this.clauses = [new Clause()];
-    for (var i = 0; i < DEFAULT_LENGTH; i++) {
-      // Avoid repeating words - if last matches, regenerate
-      var word, prevWord;
-      do {
-        word = Noun.random();
-        prevWord = this.words[i-1];
-      } while (i > 0 && word.toString() == prevWord.toString());
-      this.words.push(word);
+    // for (var i = 0; i < DEFAULT_LENGTH; i++) {
+    //   // Avoid repeating words - if last matches, regenerate
+    //   var word, prevWord;
+    //   do {
+    //     word = Noun.random();
+    //     prevWord = this.words[i-1];
+    //   } while (i > 0 && word.toString() == prevWord.toString());
+    //   this.words.push(word);
+    // }
+  }
+  get words() {
+    let result = [];
+    for (var i = 0; i < this.clauses.length; i++) {
+      result = result.concat(this.clauses[i].words);
     }
+    return result;
   }
   toString() {
     let str = '';
