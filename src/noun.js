@@ -1,12 +1,8 @@
+const fs = require('fs');
+
 const Word = require('./word');
 
-const KNOWN = {
-  'dog':{},
-  'cat':{},
-  'mouse':{'plural':'mice'},
-  'horse':{},
-  'cow':{}
-};
+const KNOWN = JSON.parse(fs.readFileSync('data/nouns.json'));
 
 class Noun extends Word {
   static get known() {
