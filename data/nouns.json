@@ -3,5 +3,10 @@
   "cat":{},
   "mouse":{"plural":"mice"},
   "horse":{},
-  "cow":{}
+  "cow":{},
+  "house":{},
+  "car":{},
+  "computer":{},
+  "school":{},
+  "person":{"plural":"people"}
 }

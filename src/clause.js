@@ -1,12 +1,13 @@
 const Noun = require('./noun');
+const NounPhrase = require('./nounphrase');
 const Verb = require('./verb');
 
 class Clause {
   constructor() {
-    this.subject = Noun.random();
+    this.subject = new NounPhrase(Noun.random());
     this.verb = new Verb('eat');
-    this.direct_object = Noun.random();
-    this.indirect_object = Noun.random();
+    this.direct_object = new NounPhrase(Noun.random());
+    this.indirect_object = new NounPhrase(Noun.random());
   }
   get words() {
     return [this.subject, this.verb, this.direct_object, this.indirect_object];
