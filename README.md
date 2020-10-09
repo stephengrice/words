@@ -14,7 +14,15 @@ I think the idea should be: Provide as much or as little information as you want
 3. Try this out.
 
 ```javascript
-const wordster = require('wordster');
+const wordster = require('./src/wordster');
 wordster.generateParagraph();
 wordster.generateSentence();
+```
+
+### Tests
+
+To run tests:
+
+```bash
+npm run test
 ```
