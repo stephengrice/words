@@ -14,7 +14,18 @@ I think the idea should be: Provide as much or as little information as you want
 3. Try this out.
 
 ```javascript
-const wordster = require('wordster');
-wordster.generateParagraph();
-wordster.generateSentence();
+> const wordster = require('./src/wordster');
+undefined
+> wordster.generateParagraph();
+'The school eat the person the cat. The dog eat the dog the computer. The person eat the dog the school. The cat eat the mouse the car. The horse eat the dog the dog.'
+> wordster.generateSentence();
+'The mouse eat the cat the dog.'
+```
+
+### Tests
+
+To run tests:
+
+```bash
+npm run test
 ```
